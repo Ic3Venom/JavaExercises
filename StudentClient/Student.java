@@ -54,14 +54,7 @@ public final class Student {
     
     public boolean equals( Student o )
     {
-        if ( o.name.equals(name) && o.GPA == GPA && o.SSN.equals(SSN) )
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return o.name.equals(name) && o.GPA == GPA && o.SSN.equals(SSN);
     }
 
 }
