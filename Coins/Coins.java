@@ -2,6 +2,7 @@
 //Julian Meyn
 
 package coins;
+
 import java.util.Scanner;
 import java.text.DecimalFormat;
 
@@ -9,7 +10,7 @@ public class Coins {
 
     public static void main(String[] args) {
 
-        //Defining our desired coins
+        //Defining our desired coin types
         int nickelAmount, dimeAmount, quarterAmount;
         
         //Initializing a new Scanner obeject
@@ -30,13 +31,13 @@ public class Coins {
                 (nickelAmount * 0.05) 
                 + (dimeAmount * 0.1)
                 + (quarterAmount * 0.25);
-        
         DecimalFormat pricePattern = new DecimalFormat ( "$0.00" );
         
-        System.out.println( "Your coins total into: " 
+        System.out.println( "Your coins total " 
                 + pricePattern.format( totalAmount ) );
         
+        System.exit( 0 );
+        
    }
-
     
 }
