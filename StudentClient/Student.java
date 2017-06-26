@@ -1,12 +1,10 @@
-//Third Java Program
-//Created by Julian Meyn
-
 package studentclient;
 
 public final class Student {
     
-    public String name, SSN;
-    public double GPA;
+    //SSN and GPA are in capital letters because they are acronyms
+    private String name, SSN;
+    private double GPA;
     
     public Student( String newName, String newSSN, double newGPA)
     {
@@ -20,9 +18,9 @@ public final class Student {
         return name;
     }
     
-    public void setName( String newName)
+    public void setName( String newName )
     {
-        name = newName;
+        this.name = newName;
     }
     
     public String getSSN( )
@@ -32,24 +30,24 @@ public final class Student {
     
     public void setSSN( String newSSN )
     {
-        SSN = newSSN;
+        this.SSN = newSSN;
     }
     
-    public double getGPA()
+    public double getGPA( )
     {
         return GPA;
     }
     
     public void setGPA( double newGPA )
     {
-        GPA = newGPA;
+        this.GPA = newGPA;
     }
     
     public String toString( )
     {
-       return  "Name: " + name + "\n"
-                + "Social security number: " + SSN + "\n"
-                + "Grade point average: " + GPA  + "\n\n";
+       return  "Name: " + this.name + "\n"
+                + "Social security number: " + this.SSN + "\n"
+                + "Grade point average: " + this.GPA  + "\n\n";
     }
     
     public boolean equals( Student o )
