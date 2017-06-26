@@ -6,8 +6,8 @@ public class StudentClient {
     public static void main(String[] args) {
         
         //Initializing both students
-        Student s1 = new Student("Julian", "123456789", 4.00);
-        Student s2 = new Student("Charisse", "314159265", 3.76);
+        Student s1 = new Student("Julian", "123456789", 4.00),
+                s2 = new Student("Charisse", "314159265", 3.76);
         
         //Printing out the information of s1 using the getInfo methods
         System.out.print("Name: " + s1.getName() + "\n"
@@ -38,6 +38,7 @@ public class StudentClient {
                 + s1.equals(s2) 
                 + "\n");
         
+        System.out.print("\nExiting program...\n");
         System.exit( 0 );
         
     }
