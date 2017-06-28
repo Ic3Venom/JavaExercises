@@ -1,4 +1,7 @@
+
 package restaurantclient;
+
+import java.text.NumberFormat;
 
 public class Restaurant extends Store{
     
@@ -7,8 +10,7 @@ public class Restaurant extends Store{
     
     public Restaurant( String newStoreName, int newPeopleServed, double newAveragePrice ) {
         
-        super(newStoreName);
-        setName( newStoreName );
+        super( newStoreName );
         setPeopleServed( newPeopleServed );
         setAveragePrice( newAveragePrice );
         
@@ -41,9 +43,11 @@ public class Restaurant extends Store{
     @Override
     public String toString( ) {
         
+        NumberFormat pricePattern = NumberFormat.getCurrencyInstance();
+        
         return "Name: " + getName()
-            + "\nPeople served annualy: " + peopleServed
-            + "\nAverage meal price: " + averagePrice
+            + "\nPeople served annualy: " + getPeopleServed() //peopleServed
+            + "\nAverage meal price: " + pricePattern.format( this.averagePrice )
             + "\n";
       
     }
@@ -59,7 +63,7 @@ public class Restaurant extends Store{
     
     public double averageTaxes( ) {
         
-        return peopleServed * averagePrice * getTaxRate();
+        return getPeopleServed() * getAveragePrice() * getTaxRate();
                 
     }
     
