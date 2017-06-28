@@ -1,4 +1,3 @@
-
 package restaurantclient;
 
 public class Restaurant extends Store{
@@ -7,6 +6,7 @@ public class Restaurant extends Store{
     private double averagePrice;
     
     public Restaurant( String newStoreName, int newPeopleServed, double newAveragePrice ) {
+        
         super(newStoreName);
         setName( newStoreName );
         setPeopleServed( newPeopleServed );
@@ -38,11 +38,12 @@ public class Restaurant extends Store{
         
     }
     
+    @Override
     public String toString( ) {
         
-        return "Name: " + getName() 
-            + "\nPeople served: " + getPeopleServed() 
-            + "\nAverage meal price: " + getAveragePrice()
+        return "Name: " + getName()
+            + "\nPeople served annualy: " + peopleServed
+            + "\nAverage meal price: " + averagePrice
             + "\n";
       
     }
@@ -56,11 +57,10 @@ public class Restaurant extends Store{
         
     }
     
-    public double averageTaxes( double annualProfit ) {
+    public double averageTaxes( ) {
         
-        return annualProfit * getTaxRate();
+        return peopleServed * averagePrice * getTaxRate();
                 
-        
     }
     
 }
