@@ -1,7 +1,7 @@
-
 package restaurantclient;
 
 public class Store {
+    
     private String storeName;
     private final double taxRate = 0.06;
     
@@ -32,7 +32,8 @@ public class Store {
     @Override
     public String toString( ) {
         
-        return getName();
+        return "Name: " + this.storeName
+            + "Tax Rate: " + this.taxRate;
         
     }
     
