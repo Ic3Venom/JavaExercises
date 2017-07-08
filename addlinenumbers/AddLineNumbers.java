@@ -26,14 +26,8 @@ public class AddLineNumbers {
                 
                 String line = scan.nextLine();
                 
-                pw.append( line );
-                
                 
             }
-            
-            outputFile.close();
-            inputFile.close();
-            
             
             
         } 
