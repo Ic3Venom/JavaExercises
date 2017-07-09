@@ -41,6 +41,13 @@ public class AddLineNumbers {
             System.err.println("Error: " + e.getMessage() + " " + e.toString());
             e.printStackTrace();
         }
+        finally
+        {
+            #TODO: add system.out messages about closing files
+            inputFile.close();
+            outputFile.close();
+            
+        }
         
                 
         
