@@ -43,7 +43,7 @@ public class AddLineNumbers {
         }
         finally
         {
-            #TODO: add system.out messages about closing files
+            //TODO: add system.out messages about closing files
             inputFile.close();
             outputFile.close();
             
