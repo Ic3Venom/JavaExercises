@@ -38,7 +38,7 @@ public class AddLineNumbers {
                 lineNumber++;
             }
             
-            //Files must close correctly before text is printed, else catch is run
+            //Files must close correctly before text is printed, else the catch is run
             scan.close();
             System.out.println("Input file has been read and closed.");
             pw.close();
