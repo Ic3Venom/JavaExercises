@@ -11,22 +11,17 @@ public class AddLineNumbers {
 
     public static void main( String[] args ) {
         
-        FileReader inputFile;
-        FileWriter outputFile;
+        FileInputStream inputFile;
+        FileOutputStream outputFile;
         int lineNumber = 1; //Using 1 instead of 0 for non-programming readers
         
         try 
         {
-            
-            /*Oracle's Java API on InputFileReader and OutputFileReader say that: 
-                * "FileInputStream is meant for reading streams of raw bytes such as image data. 
-                    For reading streams of characters, consider using FileReader."
-                * "FileOutputStream is meant for writing streams of raw bytes such as image data. 
-                    For writing streams of characters, consider using FileWriter."
-                Thus, for this exersice FileReader and FileWriter are used
+            /*Using FileOutputStream/FileInputStream even though Oracle's
+                Java API reccomends to use FileWriter and FileReader
             */
-            inputFile = new FileReader( "dataInput.txt" );
-            outputFile = new FileWriter( "dataOutput.txt" );
+            inputFile = new FileInputStream( "dataInput.txt" );
+            outputFile = new FileOutputStream( "dataOutput.txt" );
             
             Scanner scan = new Scanner( inputFile );
             PrintWriter pw = new PrintWriter( outputFile );
