@@ -3,7 +3,7 @@ package restaurantclient;
 
 public class Store {
     private String storeName;
-    public static final double taxRate = 0.06;
+    public static final double TAX_RATE = 0.06;
     
     public Store( String newStoreName ) {
         
@@ -25,7 +25,7 @@ public class Store {
     
     public double getTaxRate( ) {
         
-        return this.taxRate;
+        return this.TAX_RATE;
         
     }
     
