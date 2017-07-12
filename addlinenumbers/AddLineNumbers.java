@@ -47,13 +47,13 @@ public class AddLineNumbers {
         } 
         catch (FileNotFoundException e)
         {
-            System.err.println("Error: " + e.getMessage() + " " + e.toString());
+            System.err.println("Error: " + e.getMessage() + "; " + e.toString());
             e.printStackTrace();
             System.exit( 1 );
         }
         catch ( IOException e )
         {
-            System.err.println("Error: " + e.getMessage() + " " + e.toString());
+            System.err.println("Error: " + e.getMessage() + "; " + e.toString());
             e.printStackTrace();
             System.exit( 1 );
         }
