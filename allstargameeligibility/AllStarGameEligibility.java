@@ -38,6 +38,8 @@ public class AllStarGameEligibility {
                     + pattern.format(hittingPercentage) + " hitting percentage.");
         }
         
+        System.exit( 0 );
+        
     }
     
 }
