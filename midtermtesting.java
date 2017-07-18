@@ -35,6 +35,25 @@ public class midtermtesting {
             
         }
         System.out.println(i);
+      
+        if true
+            if true
+                if true
+                    if true
+                        System.out.print("compiler no likey, but it should work?");
+        
+        int g = 1;
+        System.out.println();
+        while true
+        {
+            System.out.println("test4");
+            if (g > 10)
+            {
+                break;
+            }
+            
+            g++;
+        }   
         
         int j = 0x10;
         System.out.println(j);
