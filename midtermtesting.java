@@ -5,7 +5,7 @@
 package midtermtesting;
 
 public class midtermtesting {
-
+    static int h = 10, i = 10;
     public static void main(String[] args) {
         
         boolean a = true;
@@ -27,26 +27,23 @@ public class midtermtesting {
         {
             System.out.println(f);
         }
-        
-        if true
-                if true
-                        if true
-                                if true
-                                        System.out.print("compiler no likey, but it should work?");
-        
-        int g = 1;
-        System.out.println();
-        while true
+        System.out.println("h " + h);
         {
-            System.out.println("test4");
-            if (g > 10)
-            {
-                break;
-            }
             
-            g++;
-        }   
+            h = 10;
+            i++;
+            
+        }
+        System.out.println(i);
         
+        int j = 0x10;
+        System.out.println(j);
+        
+        final float piF = 3.141592653589793f;
+        final double piD = 3.141592653589793d;
+        
+        System.out.println(piF == piD);
+                
     }
     
 }
