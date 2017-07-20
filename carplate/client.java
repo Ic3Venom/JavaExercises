@@ -1,72 +1,70 @@
+/* Extra Credit Project 5
+    Created by Julian Meyn
+*/
+
 package carplate;
 
-import java.io.Serializable;
+import java.util.Scanner;
+import java.io.*;
 
-public class CarPlate implements Serializable {
+public class client {
     
-    private String plateNum;
-    private String state;
-    private String plateColor; //java.awt.Color can't return a color's English name
-    
-    public CarPlate( String plateNum, String state, String plateColor )
+    public static void main( String[] args ) throws IOException
     {
         
-        setPlateNum( plateNum );
-        setState( state );
-        setPlateColor( plateColor );
+        CarPlate car1 = new CarPlate("1234567", "California", "white");
+        CarPlate car3 = new CarPlate("A113PIX", "Kansas", "PINK");
+        CarPlate car2 = new CarPlate("7SEVEN7", "Rhode Island", "GreEN");
         
-    }
-    
-    public void setPlateNum( String plateNum )
-    {
+        try
+        {
+            //"fo" stands for FileOutput, "oo' stands for ObjectOutput
+            FileOutputStream foStream = new FileOutputStream(new File("fileOutput.txt"));
+            ObjectOutputStream ooStream = new ObjectOutputStream( foStream );
+
+            // Write objects to file
+            ooStream.writeObject( car1 );
+            ooStream.writeObject( car2 );
+            ooStream.writeObject( car3 );
+
+            ooStream.close();
+            foStream.close();
+
+            //"fi" stands for FileInput, "oi" stands for ObjectInput
+            FileInputStream fiStream = new FileInputStream(new File("fileOutput.txt"));
+            ObjectInputStream oiStream = new ObjectInputStream( fiStream );
+
+            System.out.println("hello?");
+            while( fiStream.available() > 0 )
+            {
+                
+                CarPlate buffer = (CarPlate) oiStream.readObject();
+                System.out.println( buffer.toString() );
+            
+            }
+            
+            oiStream.close();
+            fiStream.close();
+
+        }
+        catch (FileNotFoundException e) 
+        {
+            
+            System.out.println("File not found");
+                
+        } 
+        catch (IOException e) 
+        {
+            
+            System.out.println("Error initializing stream");
         
-        this.plateNum = plateNum;
+        } 
+        catch (ClassNotFoundException e) {
         
-    }
-    
-    public String getPlateNum( )
-    {
+            e.printStackTrace();
+
+        }
         
-        return plateNum;
-        
-    }
-    
-    public void setState( String state )
-    {
-        
-        this.state = state;
-        
-    }
-    
-    public String getState( )
-    {
-        
-        return state;
-        
-    }
-    
-    public void setPlateColor( String plateColor )
-    {
-        
-        this.plateColor = plateColor;
-        
-    }
-    
-    public String getPlateColor( )
-    {
-        
-        return plateColor;
-        
-    }
-    
-    @Override
-    public String toString( )
-    {
-        
-        return String.format("%7s %-12s %s", 
-                getPlateNum(), 
-                getState(), //'Rhode Island' is the longest state name (12 chars)
-                getPlateColor().toUpperCase() ); //Color could be any str length
         
     }
     
