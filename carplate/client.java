@@ -1,23 +1,72 @@
-/* Extra Credit Project 5
-    Created by Julian Meyn
-*/
-
 package carplate;
 
-public class client {
+import java.io.Serializable;
+
+public class CarPlate implements Serializable {
     
-    public static void main( String[] args )
+    private String plateNum;
+    private String state;
+    private String plateColor; //java.awt.Color can't return a color's English name
+    
+    public CarPlate( String plateNum, String state, String plateColor )
     {
         
-        CarPlate car1 = new CarPlate("1234567", "California", "white");
-        System.out.println(car1.toString());
+        setPlateNum( plateNum );
+        setState( state );
+        setPlateColor( plateColor );
         
-        CarPlate car2 = new CarPlate("SEVEN77", "Rhode Island", "GreEN");
-        System.out.println(car2.toString());
+    }
+    
+    public void setPlateNum( String plateNum )
+    {
         
-        CarPlate car3 = new CarPlate("A113PIX", "Kansas", "PINK");
-        System.out.println(car3.toString());
+        this.plateNum = plateNum;
         
+    }
+    
+    public String getPlateNum( )
+    {
+        
+        return plateNum;
+        
+    }
+    
+    public void setState( String state )
+    {
+        
+        this.state = state;
+        
+    }
+    
+    public String getState( )
+    {
+        
+        return state;
+        
+    }
+    
+    public void setPlateColor( String plateColor )
+    {
+        
+        this.plateColor = plateColor;
+        
+    }
+    
+    public String getPlateColor( )
+    {
+        
+        return plateColor;
+        
+    }
+    
+    @Override
+    public String toString( )
+    {
+        
+        return String.format("%7s %-12s %s", 
+                getPlateNum(), 
+                getState(), //'Rhode Island' is the longest state name (12 chars)
+                getPlateColor().toUpperCase() ); //Color could be any str length
         
     }
     
