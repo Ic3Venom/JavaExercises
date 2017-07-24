@@ -4,7 +4,6 @@
 
 package carplate;
 
-import java.util.Scanner;
 import java.io.*;
 
 public class client {
@@ -34,7 +33,6 @@ public class client {
             FileInputStream fiStream = new FileInputStream(new File("fileOutput.txt"));
             ObjectInputStream oiStream = new ObjectInputStream( fiStream );
 
-            System.out.println("hello?");
             while( fiStream.available() > 0 )
             {
                 
